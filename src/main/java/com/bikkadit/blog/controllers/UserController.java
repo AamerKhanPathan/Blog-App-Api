@@ -36,8 +36,8 @@ public class UserController {
 	/**
 	 * @author Aamer khan
 	 * @apiNote to insert a new user in database
-	 * @param userDto
-	 * @return
+	 * @param UserDto
+	 * @return UserDto
 	 */
 	
 	@PostMapping(PathConstants.CREATE_USER_URL)
@@ -55,8 +55,8 @@ public class UserController {
 	/**
 	 * @author Aamer khan
 	 * @apiNote to fetch a  user from database
-	 * @param userDto
-	 * @return
+	 * @param Integer 
+	 * @return UserDto
 	 */
 	
 	@GetMapping(PathConstants.USER_ID)
@@ -75,8 +75,8 @@ public class UserController {
 	/**
 	 * @author Aamer khan
 	 * @apiNote to fetch all  users from database
-	 * @param userDto
-	 * @return
+	 * @param 
+	 * @return List<UserDto>
 	 */
 	
 	@GetMapping(PathConstants.GET_ALL_USER_URL)

@@ -44,8 +44,8 @@ public class PostController {
 	@Value("${project.image}")
 	private String path;
 	
-	// create post
 	
+	// create post
 	
 	/**
 	 * @author Aamer khan
@@ -62,6 +62,7 @@ public class PostController {
 		return new ResponseEntity<PostDto>(createPost, HttpStatus.CREATED);
 	}
 
+	// get post
 	
 	/**
 	 * @author Aamer khan
@@ -69,7 +70,7 @@ public class PostController {
 	 * @param postDto
 	 * @return
 	 */
-	// get post
+	
 	@GetMapping(PathConstants.GET_POST_URL)
 	public ResponseEntity<PostDto> getPost(@PathVariable Integer postId) {
 
@@ -184,7 +185,7 @@ public class PostController {
 	/**
 	 * @author Aamer khan
 	 * @apiNote to search post by title in database
-	 * @param userDto
+	 * @param String
 	 * @return
 	 */
 
@@ -214,6 +215,7 @@ public class PostController {
 	
 		String imageName = fileService.uploadImage(path, image);
 		postDto.setPostImage(imageName);
+		
 		PostDto updatePost = this.postService.updatePost(postDto, postId);
 		
 		return new ResponseEntity<PostDto>(updatePost, HttpStatus.OK);
